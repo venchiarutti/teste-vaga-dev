@@ -1,4 +1,4 @@
-# Teste para candidatos à vaga de Estágio de Programação.
+# Teste para candidatos à vaga de Programador.
 
 Olá meu amigo desenvolvedor, nesse teste analisaremos seu conhecimento geral, inclusive velocidade de desenvolvimento. 
 Abaixo explicaremos tudo o que será necessário:
