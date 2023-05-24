@@ -16,7 +16,7 @@ Você terá cinco dias para desenvolver uma tela de gerenciamento de cadastros d
 
 ## API e BD
 
-É obrigatório implementar o mecanismo de API c/ FlightPHP e gravação em BD em MySQL.
+É obrigatório implementar o mecanismo de API c/ FlightPHP e gravação em BD MySQL.
 
 ## Entrega
 
