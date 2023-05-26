@@ -23,8 +23,6 @@ Você terá cinco dias para desenvolver uma tela de gerenciamento de cadastros d
 Para iniciar o teste, faça um fork deste repositório, crie uma branch com o seu nome completo e depois envie o repositório atualizado com as suas modificações. Se você apenas clonar o repositório não vai conseguir fazer push e depois vai ser mais complicado fazer o processo.
 Também é necessário incluir um readme mostrando como fez para rodar o projeto, bem como sua estrutura.
 
-Além disso, envie seu currículo atualizado, selecionando a vaga desejada em https://magis5.factorialhr.com.br/.
-
 ## Nossa análise
 
 - Prazo de implementação.
