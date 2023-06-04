@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { validationUtils } from "./utils/validations.js";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
+    const [isFormValid, setIsFormValid] = useState(false);
     const [formValues, setFormValues] = useState({
         cnpj: '',
         name: '',
@@ -18,6 +22,19 @@ const App = () => {
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setFormValues({ ...formValues, [name]: value });
+
+        const isValid = validationUtils.validate(name, value);
+        const inputElement = e.target;
+
+        if (!isValid) {
+            inputElement.classList.add('is-invalid');
+        } else {
+            inputElement.classList.remove('is-invalid');
+        }
+
+        const formInputs = Array.from(document.querySelectorAll('.form-control'));
+        const isFormValid = formInputs.every((input) => !input.classList.contains('is-invalid'));
+        setIsFormValid(isFormValid);
     };
 
     const handleFormSubmit = async (e) => {
@@ -35,7 +52,6 @@ const App = () => {
             const data = await response.json();
 
             if (response.ok) {
-                console.log(data);
                 setFormValues({
                     cnpj: '',
                     name: '',
@@ -51,11 +67,13 @@ const App = () => {
                 fetchGridData().then(data => {
                     setGridData(data);
                 });
+
+                toast.success(data[0], { autoClose: 5000 });
             } else {
-                console.error(data.message);
+                toast.error(data[0], { autoClose: 5000 });
             }
         } catch (error) {
-            console.error('Error submitting form:', error);
+            console.error(error);
         }
     };
 
@@ -230,9 +248,13 @@ const App = () => {
                                 required
                             />
                         </label>
+                        <div className="invalid-feedback">
+                            Please provide a valid city.
+                        </div>
+
                     </div>
                     <button type="button" onClick={handleCancel}>Cancelar</button>
-                    <button type="submit">Salvar</button>
+                    <button type="submit" disabled={!isFormValid}>Salvar</button>
                 </form>
             </div>
 

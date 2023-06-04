@@ -1,5 +1,6 @@
 <?php
 declare(strict_types=1);
+
 namespace Venchiarutti\TesteVagaDev\Controller;
 
 use Doctrine\ORM\EntityManagerInterface;
@@ -70,7 +71,7 @@ class Post
                 "statusCode" => 400,
                 "message" => "Uma empresa com esse CNPJ já existe."
             ];
-        } catch (Exception $e) {
+        } catch (Exception) {
             return [
                 "statusCode" => 500,
                 "message" => "Ocorreu um erro interno."

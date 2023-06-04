@@ -10,7 +10,7 @@ use Venchiarutti\TesteVagaDev\Controller\Get;
 
 
 Flight::route('OPTIONS /*', function(){
-    Flight::json(null);
+    Flight::halt();
 });
 
 Flight::route('GET /empresas', function(){
